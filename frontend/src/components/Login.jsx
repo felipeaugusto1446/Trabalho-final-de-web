@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Login() {
+export function Login({aoLogar}) {
   // estados para guardar o que o usuário digita
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -8,11 +8,10 @@ export function Login() {
 
   // listener para o botão de login
   const fazerLogin = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setErro("");
 
     try {
-        // bater na rota de login
       const resposta = await fetch("http://127.0.0.1:8000/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -27,8 +26,9 @@ export function Login() {
       }
 
       localStorage.setItem("token", dados.access_token);
-      alert("Login feito com sucesso! Token guardado.");
       
+      aoLogar(); 
+
     } catch (error) {
       setErro("Erro de conexão com o servidor.");
     }
