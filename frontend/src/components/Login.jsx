@@ -36,8 +36,8 @@ export function Login({aoLogar}) {
 
   return (
     // formulario para chamar a funcao
-    <div className="flex justify-center mt-10">
-      <form onSubmit={fazerLogin} className="bg-white p-6 rounded-md shadow-md flex flex-col gap-4 w-80">
+    <div className="flex justify-center">
+      <form onSubmit={fazerLogin} className="bg-white p-6 rounded-md flex flex-col gap-4 w-80">
         <h2 className="text-xl font-bold text-center text-blue-600">Acesse sua conta</h2>
         
         {erro && <p className="text-red-500 text-sm text-center">{erro}</p>}

@@ -40,8 +40,8 @@ export function Cadastro({ irParaLogin }) {
   };
 
   return (
-    <div className="flex justify-center items-center mt-16">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96 border">
+    <div className="flex justify-center items-center">
+      <div className="bg-white p-8 rounded-lg w-96">
         <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">Crie sua Conta</h2>
         
         {erro && <p className="text-red-500 text-sm mb-4 text-center">{erro}</p>}
