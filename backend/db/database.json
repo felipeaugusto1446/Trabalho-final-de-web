@@ -9,6 +9,11 @@
             "email": "eu@gmail.com",
             "senha_hash": "$2b$12$dsjnDfnQ/MMr5pDyC75M/OqTSGyTxGWBV4gmY0/nBPqQlSyU1fovq",
             "id": 2
+        },
+        {
+            "email": "crud@gmail.com",
+            "senha_hash": "$2b$12$kaqOjcQQcq4Xw4v2723tLOX7NaR/oeAQIned7Ln7Oz9Kwb1Q7ZGzG",
+            "id": 3
         }
     ],
     "enderecos": []
