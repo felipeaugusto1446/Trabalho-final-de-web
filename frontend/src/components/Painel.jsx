@@ -210,7 +210,7 @@ export function Painel() {
     return (
       <div className="max-w-4xl mx-auto p-12 mt-10 bg-white rounded-md shadow-md text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Você ainda não tem endereços salvos!</h2>
-        <p className="text-gray-600 mb-8">Adicione o seu primeiro endereço para facilitar as suas próximas entregas.</p>
+        <p className="text-gray-600 mb-8">Adicione o seu primeiro endereço!</p>
         <button onClick={() => setExibirFormulario(true)} className="bg-blue-600 text-white px-6 py-3 rounded-md font-bold text-lg hover:bg-blue-700 transition shadow-md">
           + Adicionar Novo Endereço
         </button>
