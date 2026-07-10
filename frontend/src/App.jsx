@@ -1,9 +1,35 @@
+import { useState, useEffect } from "react"
+import { Header } from "./components/Header"
+import { Login } from "./components/Login"
+import { Painel } from "./components/Painel"
+
 function App() {
+  const [estaLogado, setEstaLogado] = useState(false);
+
+  // verifica se tem um token guardado
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setEstaLogado(true);
+    }
+  }, []);
+
+  // limpa tokens ao deslogar
+  const fazerLogout = () => {
+    localStorage.removeItem("token");
+    setEstaLogado(false);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-blue-600">
-        deu tudo certo
-      </h1>
+    <div className="min-h-screen bg-gray-50">
+      <Header estaLogado={estaLogado} aoSair={fazerLogout} />
+      
+      {estaLogado ? (
+        <Painel />
+      ) : (
+        <Login aoLogar={() => setEstaLogado(true)} />
+      )}
+      
     </div>
   )
 }
