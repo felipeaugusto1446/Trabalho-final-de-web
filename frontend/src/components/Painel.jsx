@@ -56,6 +56,27 @@ export function Painel() {
     setExibirFormulario(false);
   };
 
+  const excluirEndereco = async (id) => {
+    const confirmacao = window.confirm("Tem certeza que deseja excluir este endereço?");
+    if (!confirmacao) return; 
+
+    try {
+      const token = localStorage.getItem("token");
+      const resposta = await fetch(`http://127.0.0.1:8000/enderecos/${id}`, {
+        method: "DELETE",
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+
+      if (resposta.ok) {
+        buscarEnderecos();
+      } else {
+        alert("Erro ao excluir o endereço.");
+      }
+    } catch (error) {
+      alert("Erro de conexão com o servidor.");
+    }
+  };
+
   const salvarEndereco = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
@@ -186,12 +207,19 @@ export function Painel() {
                 <p className="text-gray-500 text-sm mt-1">CEP: {endereco.cep}</p>
             </div>
             
-            <div>
+            <div className="flex flex-col gap-3 items-end ml-4">
               <button 
                 onClick={() => abrirEdicao(endereco)}
                 className="text-blue-500 font-semibold hover:text-blue-700 hover:underline transition"
               >
                 Editar
+              </button>
+              
+              <button 
+                onClick={() => excluirEndereco(endereco.id)}
+                className="text-red-500 font-semibold hover:text-red-700 hover:underline transition"
+              >
+                Excluir
               </button>
             </div>
           </div>
