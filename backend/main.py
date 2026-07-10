@@ -21,3 +21,4 @@ app.include_router(auth_controller.router)
 app.include_router(enderecos_controller.router)
 
 
+

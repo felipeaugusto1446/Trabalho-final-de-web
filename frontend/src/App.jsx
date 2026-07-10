@@ -22,12 +22,14 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header estaLogado={estaLogado} aoSair={fazerLogout} />
+      
       {estaLogado ? (
-        <Painel aoSair={fazerLogout} />
+        <Painel />
       ) : (
         <Login aoLogar={() => setEstaLogado(true)} />
       )}
+      
     </div>
   )
 }
