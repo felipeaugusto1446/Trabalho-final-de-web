@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useCep } from "../hooks/useCep";
 
 export function Painel() {
   const [enderecos, setEnderecos] = useState([]);
@@ -6,6 +7,7 @@ export function Painel() {
   const [exibirFormulario, setExibirFormulario] = useState(false);
   
   const [idEmEdicao, setIdEmEdicao] = useState(null);
+  const { consultarCep, buscando } = useCep();
 
   const [descricao, setDescricao] = useState("");
   const [cep, setCep] = useState("");
@@ -35,6 +37,16 @@ export function Painel() {
       console.error("Erro ao buscar endereços", error);
     } finally {
       setCarregando(false);
+    }
+  };
+
+  const preencherEndereco = async () => {
+    const dados = await consultarCep(cep);
+    if (dados) {
+      if (dados.street) setRua(dados.street);
+      if (dados.neighborhood) setBairro(dados.neighborhood);
+      if (dados.city) setCidade(dados.city);
+      if (dados.state) setEstado(dados.state);
     }
   };
 
@@ -134,7 +146,25 @@ export function Painel() {
 
           <div className="flex flex-col">
             <label className="text-gray-700 font-semibold mb-1">CEP</label>
-            <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} placeholder="Apenas números" className="border p-2 rounded focus:outline-blue-500" required />
+            <div className="flex gap-2">
+              <input 
+                type="text" 
+                value={cep} 
+                onChange={(e) => setCep(e.target.value.replace(/\D/g, '').slice(0, 8))} 
+                maxLength="8"
+                placeholder="Apenas 8 números" 
+                className="border p-2 rounded flex-1 focus:outline-blue-500" 
+                required 
+              />
+              <button 
+                type="button"
+                onClick={preencherEndereco}
+                disabled={cep.length !== 8 || buscando}
+                className="bg-gray-600 text-white px-4 py-2 rounded font-bold hover:bg-gray-700 disabled:bg-gray-300 transition"
+              >
+                {buscando ? "..." : "Buscar"}
+              </button>
+            </div>
           </div>
 
           <div className="flex gap-4">
