@@ -29,23 +29,23 @@
         },
         {
             "cep": "37600000",
-            "rua": "Minha rua3",
-            "bairro": "Meu bairro",
-            "cidade": "Minha cidade",
-            "descricao": "Descricao",
-            "numero": "12",
+            "rua": "sdfsdfsf",
+            "bairro": "sdfsfds",
+            "cidade": "sdfsf",
+            "descricao": "Casa nova",
+            "numero": "34",
             "usuario_id": 3,
             "id": 3
         },
         {
             "cep": "37600000",
-            "rua": "Minha rua2",
-            "bairro": "Meu bairro",
-            "cidade": "Minha cidade",
-            "descricao": "Descricao",
-            "numero": "12",
-            "usuario_id": 3,
-            "id": 2
+            "rua": "dfdsfsdfsd",
+            "bairro": "dsfsdfsd",
+            "cidade": "sdfsfsd",
+            "descricao": "Casa antiga",
+            "numero": "32",
+            "usuario_id": 1,
+            "id": 4
         }
     ]
 }

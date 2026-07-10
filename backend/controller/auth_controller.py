@@ -47,4 +47,4 @@ def realizar_login(usuario: UsuarioLogin):
     dados_token = {"sub": usuario_bd["email"], "id": usuario_bd["id"]}
     token = gerar_token(dados_token)
     
-    return {"acess_token": token,"token_type":"bearer"}
+    return {"access_token": token,"token_type":"bearer"}
