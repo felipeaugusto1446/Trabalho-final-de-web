@@ -28,6 +28,7 @@ class EnderecoBase(BaseModel):
     cidade: str
     descricao: str
     numero: str
+    estado: str
     
 class EnderecoCreate(EnderecoBase):
     pass
@@ -39,6 +40,7 @@ class EnderecoUpdate(BaseModel):
     cidade: Optional[str] = None
     descricao: Optional[str] = None
     numero: Optional[str] = None
+    estado: Optional[str] = None
     
 class EnderecoResponse(EnderecoBase):
     id: int

@@ -18,34 +18,26 @@
     ],
     "enderecos": [
         {
-            "cep": "37600000",
-            "rua": "Minha rua2",
-            "bairro": "Meu bairro",
-            "cidade": "Minha cidade",
-            "descricao": "Descricao",
-            "numero": "12",
-            "usuario_id": 3,
-            "id": 2
+            "cep": "3434343434343",
+            "rua": "dsfdsfdsfdfs",
+            "bairro": "sdfsdsdf",
+            "cidade": "sdfsdfs",
+            "descricao": "Casa",
+            "numero": "34",
+            "estado": "MG",
+            "usuario_id": 1,
+            "id": 5
         },
         {
-            "cep": "37600000",
-            "rua": "Minha rua3",
-            "bairro": "Meu bairro",
-            "cidade": "Minha cidade",
-            "descricao": "Descricao",
-            "numero": "12",
-            "usuario_id": 3,
-            "id": 3
-        },
-        {
-            "cep": "37600000",
-            "rua": "Minha rua2",
-            "bairro": "Meu bairro",
-            "cidade": "Minha cidade",
-            "descricao": "Descricao",
-            "numero": "12",
-            "usuario_id": 3,
-            "id": 2
+            "cep": "344434343",
+            "rua": "dfsfsdf",
+            "bairro": "dsfsfs",
+            "cidade": "sdfsds",
+            "descricao": "sdfsdfsdf",
+            "numero": "34",
+            "estado": "SP",
+            "usuario_id": 1,
+            "id": 6
         }
     ]
 }
