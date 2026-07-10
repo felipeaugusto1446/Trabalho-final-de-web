@@ -1,4 +1,17 @@
 {
-    "usuarios":[],
-    "enderecos":[]
+    "usuarios": [
+        {
+            "id": 1,
+            "email": "aluno@unifei.edu.br",
+            "senha_hash": "hash"
+        }
+    ],
+    "enderecos": [
+        {
+            "id": 1,
+            "usuario_id": 1,
+            "cep": "37500-000",
+            "cidade": "Itajubá"
+        }
+    ]
 }
