@@ -9,7 +9,43 @@
             "email": "eu@gmail.com",
             "senha_hash": "$2b$12$dsjnDfnQ/MMr5pDyC75M/OqTSGyTxGWBV4gmY0/nBPqQlSyU1fovq",
             "id": 2
+        },
+        {
+            "email": "crud@gmail.com",
+            "senha_hash": "$2b$12$kaqOjcQQcq4Xw4v2723tLOX7NaR/oeAQIned7Ln7Oz9Kwb1Q7ZGzG",
+            "id": 3
         }
     ],
-    "enderecos": []
+    "enderecos": [
+        {
+            "cep": "37600000",
+            "rua": "Minha rua2",
+            "bairro": "Meu bairro",
+            "cidade": "Minha cidade",
+            "descricao": "Descricao",
+            "numero": "12",
+            "usuario_id": 3,
+            "id": 2
+        },
+        {
+            "cep": "37600000",
+            "rua": "Minha rua3",
+            "bairro": "Meu bairro",
+            "cidade": "Minha cidade",
+            "descricao": "Descricao",
+            "numero": "12",
+            "usuario_id": 3,
+            "id": 3
+        },
+        {
+            "cep": "37600000",
+            "rua": "Minha rua2",
+            "bairro": "Meu bairro",
+            "cidade": "Minha cidade",
+            "descricao": "Descricao",
+            "numero": "12",
+            "usuario_id": 3,
+            "id": 2
+        }
+    ]
 }
