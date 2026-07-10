@@ -59,13 +59,13 @@ def criar_endereco(dados_endereco: dict):
     salvar_banco(banco)
     return dados_endereco
 
-def listar_enderecos_usuario(usuadio_id: int):
+def listar_enderecos(usuadio_id: int):
     "busca os endereços que pertencem ao usuario logado"
     banco = ler_banco()
     enderecos = banco.get("enderecos",[])
     return [end for end in enderecos if end["usuario_id"] == usuadio_id]
 
-def atualiar_endereco(endereco_id: int, usuario_id: int, dados_atualizados: dict):
+def atualizar_endereco(endereco_id: int, usuario_id: int, dados_atualizados: dict):
     "atualiza um endereço existente, se ele pertence ao usuário logado"
     banco = ler_banco()
     enderecos = banco.get("enderecos", [])
