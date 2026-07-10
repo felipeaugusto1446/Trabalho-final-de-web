@@ -4,6 +4,11 @@
             "id": 1,
             "email": "aluno@unifei.edu.br",
             "senha_hash": "hash"
+        },
+        {
+            "email": "teste.auth@unifei.edu.br",
+            "senha_hash": "hash_ficticio_123",
+            "id": 2
         }
     ],
     "enderecos": [
