@@ -14,6 +14,16 @@
             "email": "crud@gmail.com",
             "senha_hash": "$2b$12$kaqOjcQQcq4Xw4v2723tLOX7NaR/oeAQIned7Ln7Oz9Kwb1Q7ZGzG",
             "id": 3
+        },
+        {
+            "email": "cm@gmail.com",
+            "senha_hash": "$2b$12$qCVhSQ3lhM7O83cG48i0UOItP5bOyprUELS8x9pReRbCUNMZ8CqaG",
+            "id": 4
+        },
+        {
+            "email": "dj@gmail.com",
+            "senha_hash": "$2b$12$hMo81rBkdNnKfhHx/OWQVecZyVdkZ4LR.KsnH4Yv8qYyc6xKoh2ra",
+            "id": 5
         }
     ],
     "enderecos": [

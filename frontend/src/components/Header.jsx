@@ -1,5 +1,5 @@
 // Recebendo as props que vêm lá do App.jsx
-export function Header({ estaLogado, aoSair }) {
+export function Header({ estaLogado, aoSair, aoClicarLogin, aoClicarCadastro }) {
   return (
     <header className="w-full bg-blue-600 text-white shadow-md">
       <div className="flex justify-between items-center px-6 py-4">
@@ -24,11 +24,17 @@ export function Header({ estaLogado, aoSair }) {
             </button>
           ) : (
             <>
-              <button className="font-semibold hover:underline transition">
+              <button 
+                onClick={aoClicarLogin}
+                className="font-semibold hover:underline transition"
+              >
                 Logar
               </button>
-        
-              <button className="bg-white text-blue-600 px-4 py-2 rounded-md font-bold hover:bg-gray-100 transition shadow-sm">
+              
+              <button 
+                onClick={aoClicarCadastro}
+                className="bg-white text-blue-600 px-4 py-2 rounded-md font-bold hover:bg-gray-100 transition shadow-sm"
+              >
                 Cadastrar
               </button>
             </>
