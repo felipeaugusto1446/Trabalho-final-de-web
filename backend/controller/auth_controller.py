@@ -3,7 +3,7 @@ from model.schemas import UsuarioCreate, UsuarioLogin, UsuarioResponse
 from db.crud import buscar_usuario_por_email, criar_usuario
 from middleware.auth import gerar_hash, verificar_senha, gerar_token
 
-router = APIRouter(prefix="/auth", tags="Autenticação")
+router = APIRouter(prefix="/auth", tags=["Autenticação"])
 
 @router.post("/cadastro", response_model=UsuarioResponse, status_code=status.HTTP_201_CREATED)
 def cadastrar_usuario(usuario: UsuarioCreate):
