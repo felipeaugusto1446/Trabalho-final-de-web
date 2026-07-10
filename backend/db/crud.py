@@ -41,3 +41,57 @@ def criar_usuario(dados_usuario: dict):
     salvar_banco(banco)
     
     return dados_usuario
+
+def criar_endereco(dados_endereco: dict):
+    "cria um novo endereco atrelado a um usuario"
+    banco = ler_banco
+    enderecos = banco.get("enderecos", [])
+    
+    if not enderecos:
+        novo_id = 1
+    else:
+        novo_id =  enderecos[-1]["id"]+1
+    
+    dados_endereco["id"] = novo_id
+    enderecos.append(dados_endereco)
+    
+    banco["enderecos"] = enderecos
+    salvar_banco(banco)
+    return dados_endereco
+
+def listar_enderecos_usuario(usuadio_id: int):
+    "busca os endereços que pertencem ao usuario logado"
+    banco = ler_banco()
+    enderecos = banco.get("enderecos",[])
+    return [end for end in enderecos if end["usuario_id"] == usuadio_id]
+
+def atualiar_endereco(endereco_id: int, usuario_id: int, dados_atualizados: dict):
+    "atualiza um endereço existente, se ele pertence ao usuário logado"
+    banco = ler_banco()
+    enderecos = banco.get("enderecos", [])
+    
+    for i, end in enumerate(enderecos):
+        if end["id"] == endereco_id and end["usuario_id"] == usuario_id:
+            for chave, valor in dados_atualizados.items():
+                if valor is not None:
+                    enderecos[i][chave] = valor
+                    
+            banco["enderecos"] = enderecos
+            salvar_banco(banco)
+            return enderecos[i]
+        
+    return None
+
+def deletar_endereco(endereco_id: int, usuario_id: int):
+    "remove um endereco se ele pertence ao usuario logado"
+    banco = ler_banco()
+    enderecos = banco.get("enderecos", [])
+    
+    for i, end in enumerate(enderecos):
+        if end["id"] == endereco_id and end["usuario_id"] == usuario_id:
+            endereco_removido = enderecos.pop(i)
+            banco["enderecos"] = enderecos
+            salvar_banco(banco)
+            return endereco_removido
+    
+    return None
