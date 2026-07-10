@@ -32,7 +32,7 @@ def listar_meus_enderecos(usuario_logado: dict = Depends(verificar_token)):
     
     return listar_enderecos(usuario_logado["id"])
 
-@router.put("/{endereço_id}",response_model=EnderecoResponse)
+@router.put("/{endereco_id}",response_model=EnderecoResponse)
 def editar_endereco(endereco_id: int, endereco: EnderecoUpdate, usuario_logado: dict = Depends(verificar_token)):
     "Rota privada que edita os dados de um endereço existente"
     
@@ -48,7 +48,7 @@ def editar_endereco(endereco_id: int, endereco: EnderecoUpdate, usuario_logado: 
 def remover_endereco(endereco_id: int, usuario_logado: dict = Depends(verificar_token)):
     "Rota privada que deleta um endereço"
     
-    endereco_removido = deletar_endereco(endereco_id, usuario_id=["id"])
+    endereco_removido = deletar_endereco(endereco_id, usuario_logado["id"])
     
     if not endereco_removido:
         raise HTTPException(status_code=404, detail="Endereço não encontrado")

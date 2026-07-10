@@ -44,7 +44,7 @@ def criar_usuario(dados_usuario: dict):
 
 def criar_endereco(dados_endereco: dict):
     "cria um novo endereco atrelado a um usuario"
-    banco = ler_banco
+    banco = ler_banco()
     enderecos = banco.get("enderecos", [])
     
     if not enderecos:
@@ -71,7 +71,7 @@ def atualizar_endereco(endereco_id: int, usuario_id: int, dados_atualizados: dic
     enderecos = banco.get("enderecos", [])
     
     for i, end in enumerate(enderecos):
-        if end["id"] == endereco_id and end["usuario_id"] == usuario_id:
+        if str(end["id"]) == str(endereco_id) and str(end["usuario_id"]) == str(usuario_id):            
             for chave, valor in dados_atualizados.items():
                 if valor is not None:
                     enderecos[i][chave] = valor
@@ -88,7 +88,7 @@ def deletar_endereco(endereco_id: int, usuario_id: int):
     enderecos = banco.get("enderecos", [])
     
     for i, end in enumerate(enderecos):
-        if end["id"] == endereco_id and end["usuario_id"] == usuario_id:
+        if str(end["id"]) == str(endereco_id) and str(end["usuario_id"]) == str(usuario_id):
             endereco_removido = enderecos.pop(i)
             banco["enderecos"] = enderecos
             salvar_banco(banco)

@@ -16,5 +16,36 @@
             "id": 3
         }
     ],
-    "enderecos": []
+    "enderecos": [
+        {
+            "cep": "37600000",
+            "rua": "Minha rua2",
+            "bairro": "Meu bairro",
+            "cidade": "Minha cidade",
+            "descricao": "Descricao",
+            "numero": "12",
+            "usuario_id": 3,
+            "id": 2
+        },
+        {
+            "cep": "37600000",
+            "rua": "Minha rua3",
+            "bairro": "Meu bairro",
+            "cidade": "Minha cidade",
+            "descricao": "Descricao",
+            "numero": "12",
+            "usuario_id": 3,
+            "id": 3
+        },
+        {
+            "cep": "37600000",
+            "rua": "Minha rua2",
+            "bairro": "Meu bairro",
+            "cidade": "Minha cidade",
+            "descricao": "Descricao",
+            "numero": "12",
+            "usuario_id": 3,
+            "id": 2
+        }
+    ]
 }
