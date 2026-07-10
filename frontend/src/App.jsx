@@ -4,6 +4,7 @@ import { Login } from "./components/Login";
 import { Cadastro } from "./components/Cadastro"; 
 import { Painel } from "./components/Painel";
 import { Modal } from "./components/Modal";
+import { CardsUsuarios } from "./components/CardsUsuários"; 
 
 function App() {
   const [estaLogado, setEstaLogado] = useState(false);
@@ -26,8 +27,9 @@ function App() {
     if (telaAtiva === "inicio") {
       return (
         <div className="flex flex-col items-center justify-center mt-20 text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Bem-vindo ao Lirili-larilá</h1>
-          <p className="text-xl text-gray-600">Faça login ou cadastre-se para gerenciar seus endereços.</p>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Bem-vindo ao Minhas localizações maneiras!</h1>
+          <p className="text-xl text-gray-600">Seu site preferido para guardar seus melhores endereços</p>
+          <p className="text-xl text-gray-600">com uma segurança duvidosa e um design mais duvidoso ainda!</p>
         </div>
       );
     }
@@ -56,7 +58,10 @@ function App() {
       {estaLogado ? (
         <Painel />
       ) : (
-        renderizarAreaDeslogada()
+        <div className="bg-gray-50 pb-20">
+        {renderizarAreaDeslogada()}
+        <CardsUsuarios />
+        </div>
       )}
     </div>
   );

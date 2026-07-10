@@ -1,20 +1,24 @@
-// Recebendo as props que vêm lá do App.jsx
+import local from "../assets/local.png"
+
 export function Header({ estaLogado, aoSair, aoClicarLogin, aoClicarCadastro }) {
   return (
     <header className="w-full bg-blue-600 text-white shadow-md">
-      <div className="flex justify-between items-center px-6 py-4">
-        <div className="flex items-center">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
-                L
-            </div>
-            <p className="ml-2 font-bold text-xl tracking-wide">lirili-larila</p>
+      <div className="grid grid-cols-3 items-center px-6 py-4">
+        
+        <div className="flex justify-start">
+            <img 
+              src={local} 
+              alt="Logo" 
+              className="w-10 h-10 object-contain" 
+            />
         </div>
 
-        <div className="flex-1 text-center">
-            <p className="font-bold text-xl tracking-wide">Minhas localizações maneiras</p>
+        <div className="text-center font-bold text-xl tracking-wide">
+            Minhas localizações maneiras
         </div>
 
-        <div className="flex gap-4">
+        {/* LADO DIREITO: Botões (Largura igual ao lado esquerdo para manter o centro) */}
+        <div className="flex gap-4 justify-end">
           {estaLogado ? (
             <button 
               onClick={aoSair}
